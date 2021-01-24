@@ -44,10 +44,21 @@ namespace test2
 
 
         }
-        public static string filename1;
-        public static string filename2;
-        public static string textfile;
-        public static string needed_textfile;
+            public static string filename1;
+            public static string filename2;
+            public static string textfile;
+            public static string needed_textfile;
+            public static int podpischiki=0;
+            public static int podpiski=0;
+            public static int ne_podpisni=0;
+            public static int net_podpiski=0;
+            public static int razn;
+            public static int razn2;
+            public static int flag=0;
+            public static int flag1 = 0; 
+            public static int flag2 = 0;
+            public static int flag3 = 0;
+
         private void button1_Click(object sender, EventArgs e)
         {
             button1.ForeColor = Color.White; //ПОДПИСЧИКИ
@@ -162,6 +173,8 @@ namespace test2
                         fileList2.RemoveAt(i); //Удаление строки целиком
                     };
                 };
+                podpischiki = fileList.Count;
+                podpiski = fileList2.Count;
                 fileList3.AddRange(fileList);
                 fileList.AddRange(fileList2);
                 fileList.Sort();
@@ -193,6 +206,7 @@ namespace test2
                             i--;
                         };
                 };
+                ne_podpisni = fileList.Count;
                 for (int i = 0; i < fileList.Count; i++)
                 {
                     textBox2.Text += fileList[i].ToString() + Environment.NewLine;
@@ -286,6 +300,7 @@ namespace test2
                             i--;
                         };
                 };
+                net_podpiski = fileList.Count;
                 for (int i = 0; i < fileList.Count; i++)
                 {
                     textBox2.Text += fileList[i].ToString() + Environment.NewLine;
@@ -320,8 +335,27 @@ namespace test2
             label6.Visible = true;
             label7.Visible = true;
             label8.Visible = true;
-
-
+            //if (label4.Text == "4 Всего подписчиков :")
+            if ((flag == 0) && (podpischiki != 0))
+            {
+                label4.Text += podpischiki;
+                flag++;
+            }
+            if ((flag1 == 0) && (podpiski != 0))
+            {
+                label3.Text += podpiski;
+                flag1++;
+            }
+            if ((flag2 == 0) && (ne_podpisni != 0))
+            {
+                label8.Text += ne_podpisni;
+                flag2++;
+            }
+            if ((flag3 == 0) && (net_podpiski != 0))
+            {
+                label7.Text += net_podpiski;
+                flag3++;
+            }
         }
 
         private void button14_Click(object sender, EventArgs e)
