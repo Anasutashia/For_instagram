@@ -39,6 +39,10 @@ namespace test2
             label6.Visible = false;
             label7.Visible = false;
             label8.Visible = false;
+            checkBox1.Visible = false;
+            checkBox2.Visible = false;
+            checkBox3.Visible = false;
+            checkBox4.Visible = false;
 
             label1.Text = "Выбор профиля";
 
@@ -86,6 +90,10 @@ namespace test2
             label6.Visible = false;
             label7.Visible = false;
             label8.Visible = false;
+            checkBox2.Visible = false;
+            checkBox1.Visible = true;
+            checkBox3.Visible = false;
+            checkBox4.Visible = false;
 
             label1.Text = "Выберите путь к файлу";
             
@@ -118,6 +126,10 @@ namespace test2
             label6.Visible = false;
             label7.Visible = false;
             label8.Visible = false;
+            checkBox1.Visible = false;
+            checkBox2.Visible = true;
+            checkBox3.Visible = false;
+            checkBox4.Visible = false;
             label1.Text = "Выберите путь к файлу";
         }
         private void button3_Click(object sender, EventArgs e)
@@ -146,6 +158,10 @@ namespace test2
             label6.Visible = false;
             label7.Visible = false;
             label8.Visible = false;
+            checkBox1.Visible = false;
+            checkBox2.Visible = false;
+            checkBox3.Visible = true;
+            checkBox4.Visible = true;
 
             label1.Text = "Не подписаны на аккаунт";
             if ((filename1 != null) && (filename2 != null))
@@ -242,6 +258,10 @@ namespace test2
             label6.Visible = false;
             label7.Visible = false;
             label8.Visible = false;
+            checkBox1.Visible = false;
+            checkBox2.Visible = false;
+            checkBox3.Visible = false;
+            checkBox4.Visible = false;
 
             label1.Text = "Нет подписок на аккаунты";
             if ((filename1 != null) && (filename2 != null))
@@ -335,6 +355,10 @@ namespace test2
             label6.Visible = true;
             label7.Visible = true;
             label8.Visible = true;
+            checkBox1.Visible = false;
+            checkBox2.Visible = false;
+            checkBox3.Visible = false;
+            checkBox4.Visible = false;
             //if (label4.Text == "4 Всего подписчиков :")
             if ((flag == 0) && (podpischiki != 0))
             {
@@ -386,6 +410,10 @@ namespace test2
             label6.Visible = false;
             label7.Visible = false;
             label8.Visible = false;
+            checkBox1.Visible = false;
+            checkBox2.Visible = false;
+            checkBox3.Visible = false;
+            checkBox4.Visible = false;
 
             button17.Text = "Профиль1";
 
@@ -419,6 +447,10 @@ namespace test2
             label6.Visible = false;
             label7.Visible = false;
             label8.Visible = false;
+            checkBox1.Visible = false;
+            checkBox2.Visible = false;
+            checkBox3.Visible = false;
+            checkBox4.Visible = false;
 
             button17.Text = "Профиль2";
         }
@@ -451,6 +483,10 @@ namespace test2
             label6.Visible = false;
             label7.Visible = false;
             label8.Visible = false;
+            checkBox1.Visible = false;
+            checkBox2.Visible = false;
+            checkBox3.Visible = false;
+            checkBox4.Visible = false;
 
             button17.Text = "Профиль3";
         }
@@ -483,6 +519,10 @@ namespace test2
             label6.Visible = false;
             label7.Visible = false;
             label8.Visible = false;
+            checkBox1.Visible = false;
+            checkBox2.Visible = false;
+            checkBox3.Visible = false;
+            checkBox4.Visible = false;
 
             label1.Text = "Выбор профиля";
         }
@@ -497,8 +537,8 @@ namespace test2
                 filename1 = openFileDialog1.FileName;
                 // читаем файл в строку
                 textfile = System.IO.File.ReadAllText(filename1);
-                //string fileText = System.IO.File.ReadAllText(filename);
-                
+               // string fileText = System.IO.File.SelectedPath;
+                textBox1.Text = filename1;
             }
         }
 
