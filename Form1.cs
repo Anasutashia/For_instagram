@@ -40,7 +40,7 @@ namespace test2
             label7.Visible = false;
             label8.Visible = false;
             checkBox1.Visible = false;
-            checkBox2.Visible = false;
+            checkBox2.Visible = false;//тест
             checkBox3.Visible = false;
             checkBox4.Visible = false;
 
