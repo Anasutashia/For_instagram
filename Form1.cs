@@ -513,7 +513,7 @@ namespace test2
             button14.Visible = true; //кнопки профиль
             button15.Visible = true; //кнопки профиль
             button16.Visible = true; //кнопки профиль
-            label3.Visible = false;
+            label3.Visible = false; //
             label4.Visible = false;
             label5.Visible = false;
             label6.Visible = false;
