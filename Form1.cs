@@ -500,7 +500,7 @@ namespace test2
             label2.Visible = false; //путь
             button6.Visible = false; //2- подписки
             button7.Visible = false; //2- подписки
-            button8.Visible = false; //2- подписки
+            button8.Visible = false; //2- подписки 
             textBox1.Visible = false; //проверка подписки\подписчики
             textBox2.Visible = false; //вывод нет подписки\не подписавшихся
             button12.Visible = false;//сохранение  не подписавшихся!
@@ -567,7 +567,7 @@ namespace test2
         }
         private void button7_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textfile;
+            textBox1.Text = textfile; //
             //textBox1.Text = fileText;
         }
 
