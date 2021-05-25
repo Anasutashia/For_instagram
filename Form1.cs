@@ -32,7 +32,13 @@ namespace test2
             button2.Visible = false; //кнопки слева
             button3.Visible = false; //кнопки слева
             button4.Visible = false; //кнопки слева
-            button5.Visible = false; //кнопки слева
+            button5.Visible = false;//кнопки слева
+            button14.Visible = false;// выбор профилей проф 1
+            button15.Visible = false;// выбор профилей проф 2
+            button16.Visible = false;// выбор профилей проф 3
+            button17.Visible = false;// сменить профиль спарва сверху
+            button18.Visible = false;//отсутсвует бд - создать
+            button19.Visible = false;//отсутсвует бд - указать
             label3.Visible = false;
             label4.Visible = false;
             label5.Visible = false;
@@ -45,6 +51,20 @@ namespace test2
             checkBox4.Visible = false;
 
             label1.Text = "Выбор профиля";
+
+            string pathFile = Application.StartupPath + "db.txt";
+            if (System.IO.File.Exists("db.txt"))
+            {
+                button14.Visible = true;// выбор профилей проф 1
+                button15.Visible = true;// выбор профилей проф 2
+                button16.Visible = true;// выбор профилей проф 3
+                button17.Visible = true;
+            }
+            else
+            {
+                button19.Visible = true;//отсутсвует бд - указать
+                button18.Visible = true;//отсутсвует бд - создать
+            }
 
 
         }
@@ -62,6 +82,7 @@ namespace test2
             public static int flag1 = 0; 
             public static int flag2 = 0;
             public static int flag3 = 0;
+      
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -600,6 +621,31 @@ namespace test2
             string filename = saveFileDialog1.FileName;
             // сохраняем текст в файл
             System.IO.File.WriteAllText(filename, textBox2.Text);
+        }
+
+        private void button18_Click_1(object sender, EventArgs e)
+        {
+            System.IO.File.Create("db.txt");
+            button14.Visible = true;// выбор профилей проф 1
+            button15.Visible = true;// выбор профилей проф 2
+            button16.Visible = true;// выбор профилей проф 3
+            button17.Visible = true;
+            button18.Visible = false;
+            button19.Visible = false;
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog3.ShowDialog() == DialogResult.Cancel)
+                return;
+            button14.Visible = true;// выбор профилей проф 1
+            button15.Visible = true;// выбор профилей проф 2
+            button16.Visible = true;// выбор профилей проф 3
+            button17.Visible = true;
+            button18.Visible = false;
+            button19.Visible = false;
+
+
         }
     }
 }
