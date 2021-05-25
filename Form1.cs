@@ -39,6 +39,9 @@ namespace test2
             button17.Visible = false;// сменить профиль спарва сверху
             button18.Visible = false;//отсутсвует бд - создать
             button19.Visible = false;//отсутсвует бд - указать
+            button20.Visible = false;//кнопка создать, проф 1 кнопка 14
+            button21.Visible = false;//кнопка создать, проф 2 кнопка 15
+            button22.Visible = false;//кнопка создать, проф 3 кнопка 16
             label3.Visible = false;
             label4.Visible = false;
             label5.Visible = false;
@@ -49,6 +52,7 @@ namespace test2
             checkBox2.Visible = false;//тест
             checkBox3.Visible = false;
             checkBox4.Visible = false;
+
 
             label1.Text = "Выбор профиля";
 
@@ -405,44 +409,61 @@ namespace test2
 
         private void button14_Click(object sender, EventArgs e)
         {
-            button9.Visible = false; //1- подписчики 
-            button10.Visible = false;//1- подписчики 
-            button11.Visible = false;//1- подписчики 
-            label1.Visible = false;  //укажите путь
-            label2.Visible = false; //путь
-            button6.Visible = false; //2- подписки
-            button7.Visible = false; //2- подписки
-            button8.Visible = false; //2- подписки
-            textBox1.Visible = false; //проверка подписки\подписчики
-            textBox2.Visible = false; //вывод нет подписки\не подписавшихся
-            button12.Visible = false;//сохранение  не подписавшихся!
-            button13.Visible = false;//сохранение нет подписки
-            button1.Visible = true; //кнопки слева
-            button2.Visible = true; //кнопки слева
-            button3.Visible = true; //кнопки слева
-            button4.Visible = true; //кнопки слева
-            button5.Visible = true; //кнопки слева
-            button14.Visible = false; //кнопки профиль
-            button15.Visible = false; //кнопки профиль
-            button16.Visible = false; //кнопки профиль
-            label3.Visible = false;
-            label4.Visible = false;
-            label5.Visible = false;
-            label6.Visible = false;
-            label7.Visible = false;
-            label8.Visible = false;
-            checkBox1.Visible = false;
-            checkBox2.Visible = false;
-            checkBox3.Visible = false;
-            checkBox4.Visible = false;
+            string pathFile = Application.StartupPath + "p1.txt";
+            if (System.IO.File.Exists("p1.txt"))
+            {
+                button9.Visible = false; //1- подписчики 
+                button10.Visible = false;//1- подписчики 
+                button11.Visible = false;//1- подписчики 
+                label1.Visible = false;  //укажите путь
+                label2.Visible = false; //путь
+                button6.Visible = false; //2- подписки
+                button7.Visible = false; //2- подписки
+                button8.Visible = false; //2- подписки
+                textBox1.Visible = false; //проверка подписки\подписчики
+                textBox2.Visible = false; //вывод нет подписки\не подписавшихся
+                button12.Visible = false;//сохранение  не подписавшихся!
+                button13.Visible = false;//сохранение нет подписки
+                button1.Visible = true; //кнопки слева
+                button2.Visible = true; //кнопки слева
+                button3.Visible = true; //кнопки слева
+                button4.Visible = true; //кнопки слева
+                button5.Visible = true; //кнопки слева
+                button14.Visible = false; //кнопки профиль
+                button15.Visible = false; //кнопки профиль
+                button16.Visible = false; //кнопки профиль
+                label3.Visible = false;
+                label4.Visible = false;
+                label5.Visible = false;
+                label6.Visible = false;
+                label7.Visible = false;
+                label8.Visible = false;
+                checkBox1.Visible = false;
+                checkBox2.Visible = false;
+                checkBox3.Visible = false;
+                checkBox4.Visible = false;
 
-            button17.Text = "Профиль1";
+                button17.Text = "Профиль1";
+            }
+            else
+            {
+                button20.Visible = true;
+                button14.Visible = false;// выбор профилей проф 1
+                button15.Visible = false;// выбор профилей проф 2
+                button16.Visible = false;// выбор профилей проф 3
+                button17.Visible = false;// сменить профиль спарва сверху
 
+
+
+            }
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
-            button9.Visible = false; //1- подписчики 
+            string pathFile = Application.StartupPath + "p2.txt";
+            if (System.IO.File.Exists("p2.txt"))
+            {
+                button9.Visible = false; //1- подписчики 
             button10.Visible = false;//1- подписчики 
             button11.Visible = false;//1- подписчики 
             label1.Visible = false;  //укажите путь
@@ -474,11 +495,26 @@ namespace test2
             checkBox4.Visible = false;
 
             button17.Text = "Профиль2";
+            }
+            else
+            {
+                button21.Visible = true;
+                button14.Visible = false;// выбор профилей проф 1
+                button15.Visible = false;// выбор профилей проф 2
+                button16.Visible = false;// выбор профилей проф 3
+                button17.Visible = false;// сменить профиль спарва сверху
+
+
+
+            }
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
-            button9.Visible = false; //1- подписчики 
+            string pathFile = Application.StartupPath + "p3.txt";
+            if (System.IO.File.Exists("p3.txt"))
+            {
+                button9.Visible = false; //1- подписчики 
             button10.Visible = false;//1- подписчики 
             button11.Visible = false;//1- подписчики 
             label1.Visible = false;  //укажите путь
@@ -510,6 +546,18 @@ namespace test2
             checkBox4.Visible = false;
 
             button17.Text = "Профиль3";
+            }
+            else
+            {
+                button22.Visible = true;
+                button14.Visible = false;// выбор профилей проф 1
+                button15.Visible = false;// выбор профилей проф 2
+                button16.Visible = false;// выбор профилей проф 3
+                button17.Visible = false;// сменить профиль спарва сверху
+
+
+
+            }
         }
 
         private void button17_Click(object sender, EventArgs e)
@@ -646,6 +694,118 @@ namespace test2
             button19.Visible = false;
 
 
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            System.IO.File.Create("p1.txt");
+            button9.Visible = false; //1- подписчики 
+            button10.Visible = false;//1- подписчики 
+            button11.Visible = false;//1- подписчики 
+            label1.Visible = false;  //укажите путь
+            label2.Visible = false; //путь
+            button6.Visible = false; //2- подписки
+            button7.Visible = false; //2- подписки
+            button8.Visible = false; //2- подписки
+            textBox1.Visible = false; //проверка подписки\подписчики
+            textBox2.Visible = false; //вывод нет подписки\не подписавшихся
+            button12.Visible = false;//сохранение  не подписавшихся!
+            button13.Visible = false;//сохранение нет подписки
+            button1.Visible = true; //кнопки слева
+            button2.Visible = true; //кнопки слева
+            button3.Visible = true; //кнопки слева
+            button4.Visible = true; //кнопки слева
+            button5.Visible = true; //кнопки слева
+            button14.Visible = false; //кнопки профиль
+            button15.Visible = false; //кнопки профиль
+            button16.Visible = false; //кнопки профиль
+            label3.Visible = false;
+            label4.Visible = false;
+            label5.Visible = false;
+            label6.Visible = false;
+            label7.Visible = false;
+            label8.Visible = false;
+            checkBox1.Visible = false;
+            checkBox2.Visible = false;
+            checkBox3.Visible = false;
+            checkBox4.Visible = false;
+            button20.Visible = false;
+            button17.Visible = true;
+
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            System.IO.File.Create("p2.txt");
+            button9.Visible = false; //1- подписчики 
+            button10.Visible = false;//1- подписчики 
+            button11.Visible = false;//1- подписчики 
+            label1.Visible = false;  //укажите путь
+            label2.Visible = false; //путь
+            button6.Visible = false; //2- подписки
+            button7.Visible = false; //2- подписки
+            button8.Visible = false; //2- подписки
+            textBox1.Visible = false; //проверка подписки\подписчики
+            textBox2.Visible = false; //вывод нет подписки\не подписавшихся
+            button12.Visible = false;//сохранение  не подписавшихся!
+            button13.Visible = false;//сохранение нет подписки
+            button1.Visible = true; //кнопки слева
+            button2.Visible = true; //кнопки слева
+            button3.Visible = true; //кнопки слева
+            button4.Visible = true; //кнопки слева
+            button5.Visible = true; //кнопки слева
+            button14.Visible = false; //кнопки профиль
+            button15.Visible = false; //кнопки профиль
+            button16.Visible = false; //кнопки профиль
+            label3.Visible = false;
+            label4.Visible = false;
+            label5.Visible = false;
+            label6.Visible = false;
+            label7.Visible = false;
+            label8.Visible = false;
+            checkBox1.Visible = false;
+            checkBox2.Visible = false;
+            checkBox3.Visible = false;
+            checkBox4.Visible = false;
+            button21.Visible = false;
+            button17.Visible = true;
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            System.IO.File.Create("p3.txt");
+            button9.Visible = false; //1- подписчики 
+            button10.Visible = false;//1- подписчики 
+            button11.Visible = false;//1- подписчики 
+            label1.Visible = false;  //укажите путь
+            label2.Visible = false; //путь
+            button6.Visible = false; //2- подписки
+            button7.Visible = false; //2- подписки
+            button8.Visible = false; //2- подписки
+            textBox1.Visible = false; //проверка подписки\подписчики
+            textBox2.Visible = false; //вывод нет подписки\не подписавшихся
+            button12.Visible = false;//сохранение  не подписавшихся!
+            button13.Visible = false;//сохранение нет подписки
+            button1.Visible = true; //кнопки слева
+            button2.Visible = true; //кнопки слева
+            button3.Visible = true; //кнопки слева
+            button4.Visible = true; //кнопки слева
+            button5.Visible = true; //кнопки слева
+            button14.Visible = false; //кнопки профиль
+            button15.Visible = false; //кнопки профиль
+            button16.Visible = false; //кнопки профиль
+            label3.Visible = false;
+            label4.Visible = false;
+            label5.Visible = false;
+            label6.Visible = false;
+            label7.Visible = false;
+            label8.Visible = false;
+            checkBox1.Visible = false;
+            checkBox2.Visible = false;
+            checkBox3.Visible = false;
+            checkBox4.Visible = false;
+            button22.Visible = false;
+            button17.Visible = true;
         }
     }
 }
