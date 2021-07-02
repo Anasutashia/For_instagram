@@ -164,7 +164,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button6.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button6.Location = new System.Drawing.Point(455, 120);
+            this.button6.Location = new System.Drawing.Point(385, 120);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(167, 40);
             this.button6.TabIndex = 7;
@@ -178,7 +178,7 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button7.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button7.Location = new System.Drawing.Point(332, 174);
+            this.button7.Location = new System.Drawing.Point(277, 174);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(167, 40);
             this.button7.TabIndex = 8;
@@ -192,7 +192,7 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button8.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.button8.Location = new System.Drawing.Point(558, 174);
+            this.button8.Location = new System.Drawing.Point(505, 174);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(167, 40);
             this.button8.TabIndex = 9;
@@ -234,7 +234,7 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button11.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button11.Location = new System.Drawing.Point(386, 120);
+            this.button11.Location = new System.Drawing.Point(385, 120);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(167, 40);
             this.button11.TabIndex = 12;
@@ -424,7 +424,8 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(254, 211);
+            this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.checkBox1.Location = new System.Drawing.Point(558, 120);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(167, 17);
             this.checkBox1.TabIndex = 29;
@@ -434,7 +435,8 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(254, 250);
+            this.checkBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.checkBox2.Location = new System.Drawing.Point(558, 120);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(156, 17);
             this.checkBox2.TabIndex = 30;
@@ -450,6 +452,7 @@
             this.checkBox3.TabIndex = 31;
             this.checkBox3.Text = "checkBox3 порядковый номер";
             this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // checkBox4
             // 
@@ -460,6 +463,7 @@
             this.checkBox4.TabIndex = 32;
             this.checkBox4.Text = "checkBox4 разбивать по 10";
             this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
             // button18
             // 
@@ -473,7 +477,7 @@
             this.button18.TabIndex = 34;
             this.button18.Text = "создать 18";
             this.button18.UseVisualStyleBackColor = false;
-            this.button18.Click += new System.EventHandler(this.button18_Click_1);
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // button19
             // 
