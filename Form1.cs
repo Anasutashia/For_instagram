@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace test2
@@ -233,9 +229,8 @@ namespace test2
         }
             public static string filename1;
             public static string filename2;
-            public static string filepathtoold ;
-           //public static string textfile;
-           //public static string needed_textfile;
+            public static string filename_path1;
+            public static string filename_path2;
             public static int podpischiki=0;
             public static int podpiski=0;
             public static int ne_podpisni=0;
@@ -256,7 +251,7 @@ namespace test2
 
             Visible_Changes(1);
             label1.Text = "Выберите путь к файлу";
-
+            label1.Text = Properties.Settings.Default.FilePathName1;
         }
 
         private void button2_Click(object sender, EventArgs e) //кнопка "подписки"
@@ -264,7 +259,7 @@ namespace test2
 
             Visible_Changes(2);
             label1.Text = "Выберите путь к файлу";
-
+            label1.Text = Properties.Settings.Default.FilePathName2;
         }
 
         private void button3_Click(object sender, EventArgs e) //кнопка "не подписаны"
@@ -468,7 +463,7 @@ namespace test2
             if (openFileDialog2.ShowDialog() == DialogResult.Cancel)
                 return;
 
-            filename2 = openFileDialog2.FileName;
+            filename_path2 = openFileDialog2.FileName;
             // читаем файл в строку
             //textfile = System.IO.File.ReadAllText(filename2);
             //string fileText = System.IO.File.ReadAllText(filename);
@@ -476,34 +471,55 @@ namespace test2
 
         private void button7_Click(object sender, EventArgs e)
         {
-            textBox1.Text = File.ReadAllText(filename2); //
+            textBox1.Clear();
+            if (checkBox2.Checked == true)
+                textBox1.Text = File.ReadAllText(Properties.Settings.Default.FilePathName2);
+            if (filename_path2 != null && checkBox2.Checked == false)
+                textBox1.Text = File.ReadAllText(filename_path2);
+            
+                //textBox1.Text = "укажите файл"; //
             //textBox1.Text = fileText;
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            if (checkBox1.Checked == true)
-            {
-                filename2 = File.ReadAllText("p2.txt");
-                //textfile = File.ReadAllText(filename1);
-            }
-            else
+            textBox1.Clear();
+            if (filename_path2 != null && checkBox2.Checked ==false)
             {
                 File.WriteAllText("p2.txt", filename2);
-                //textfile = File.ReadAllText(filename1);
+                Properties.Settings.Default.FilePathName2 = filename2;
+                Properties.Settings.Default.Save();
+                goto Finish;
             }
+            
+                    //textfile = File.ReadAllText(filename1);
+            if (checkBox2.Checked == true)
+            {
+                //filename2 = File.ReadAllText("p2.txt");
+                filename2 = Properties.Settings.Default.FilePathName2;
+                //filename_path2 = filename2;
+                //textBox2.Text = filename2;
+                goto Finish;
+            }
+
+            textBox1.Text = "укажите файл";
+        Finish:
+            textBox1.Text +="";
         }
 
         private void button9_Click(object sender, EventArgs e)//подтвердить
         {
             if (checkBox1.Checked == true)
             {
-                filename1 = File.ReadAllText("p1.txt"); 
+                //filename1 = File.ReadAllText("p1.txt");
+                filename1 = Properties.Settings.Default.FilePathName1;
                 //textfile = File.ReadAllText(filename1);
             }
             else
             {
-                File.WriteAllText("p1.txt", filename1);
+               // File.WriteAllText("p1.txt", filename1);
+                Properties.Settings.Default.FilePathName1 = filename1;
+                Properties.Settings.Default.Save();
                 //textfile = File.ReadAllText(filename1);
             }
             // читаем файл в строку
@@ -513,7 +529,11 @@ namespace test2
 
         private void button10_Click(object sender, EventArgs e)
         {
+            //label1.Text = filename1;
+            if(filename1!=null)
             textBox1.Text = File.ReadAllText(filename1);
+            else
+                textBox1.Text = "укажите файл";
             //  textBox1.Text = fileText;
         }
 
